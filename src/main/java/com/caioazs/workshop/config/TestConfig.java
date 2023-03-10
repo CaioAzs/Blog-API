@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 import com.caioazs.workshop.dto.AuthorDTO;
+import com.caioazs.workshop.dto.CommentDTO;
 import com.caioazs.workshop.models.Post;
 import com.caioazs.workshop.models.User;
 import com.caioazs.workshop.repositories.PostRepository;
@@ -39,13 +40,22 @@ public class TestConfig implements CommandLineRunner {
         userRepository.saveAll(Arrays.asList(jonas, caio, jorge));
 
         Post post1 = new Post(null, sdf.parse("21/03/2018"), "Pai ta on", "Bo jogar um lolzim", new AuthorDTO(jonas));
-        Post post2 = new Post(null, sdf.parse("23/03/2018"), "Nao acredito",
-                "Quem foi q vazou foto do meu cheetos?????", new AuthorDTO(caio));
+        Post post2 = new Post(null, sdf.parse("23/03/2018"), "Nao acredito", "Quem foi q vazou foto do meu cheetos?????", new AuthorDTO(caio));
 
+        postRepository.saveAll(Arrays.asList(post1, post2));
+
+        CommentDTO c1 = new CommentDTO("bora, adiciona ai!", sdf.parse("21/03/2018"), new AuthorDTO(caio));
+		CommentDTO c2 = new CommentDTO("NAO FUI EU!!!!", sdf.parse("22/03/2018"), new AuthorDTO(jorge));
+
+
+        post1.getComments().addAll(Arrays.asList(c1));
+        post2.getComments().addAll(Arrays.asList(c2));
+        
         postRepository.saveAll(Arrays.asList(post1, post2));
 
         jonas.getPosts().add(post1);
         caio.getPosts().add(post2);
+
         userRepository.saveAll(Arrays.asList(jonas, caio));
     }
 }
