@@ -1,10 +1,10 @@
-package com.caioazs.workshop;
+package com.caioazs.blog_api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WorkshopApplicationTests {
+class blog_apiApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,4 +1,4 @@
-package com.caioazs.workshop.services;
+package com.caioazs.blog_api.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.caioazs.workshop.dto.UserDTO;
-import com.caioazs.workshop.exceptions.ObjectNotFoundException;
-import com.caioazs.workshop.models.User;
-import com.caioazs.workshop.repositories.UserRepository;
+import com.caioazs.blog_api.dto.UserDTO;
+import com.caioazs.blog_api.exceptions.ObjectNotFoundException;
+import com.caioazs.blog_api.models.User;
+import com.caioazs.blog_api.repositories.UserRepository;
 
 @Service
 public class UserService {

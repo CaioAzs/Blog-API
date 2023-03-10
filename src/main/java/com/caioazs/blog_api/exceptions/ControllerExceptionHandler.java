@@ -1,4 +1,4 @@
-package com.caioazs.workshop.exceptions;
+package com.caioazs.blog_api.exceptions;
 
 import javax.servlet.http.HttpServletRequest;
 

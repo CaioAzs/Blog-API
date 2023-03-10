@@ -1,4 +1,4 @@
-package com.caioazs.workshop.exceptions;
+package com.caioazs.blog_api.exceptions;
 
 public class StandardError {
 	private Long timestamp;

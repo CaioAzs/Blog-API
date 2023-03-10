@@ -1,4 +1,4 @@
-package com.caioazs.workshop.config;
+package com.caioazs.blog_api.config;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
-import com.caioazs.workshop.dto.AuthorDTO;
-import com.caioazs.workshop.dto.CommentDTO;
-import com.caioazs.workshop.models.Post;
-import com.caioazs.workshop.models.User;
-import com.caioazs.workshop.repositories.PostRepository;
-import com.caioazs.workshop.repositories.UserRepository;
+import com.caioazs.blog_api.dto.AuthorDTO;
+import com.caioazs.blog_api.dto.CommentDTO;
+import com.caioazs.blog_api.models.Post;
+import com.caioazs.blog_api.models.User;
+import com.caioazs.blog_api.repositories.PostRepository;
+import com.caioazs.blog_api.repositories.UserRepository;
 
 @Configuration
 public class TestConfig implements CommandLineRunner {

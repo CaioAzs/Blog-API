@@ -1,4 +1,4 @@
-package com.caioazs.workshop.controllers;
+package com.caioazs.blog_api.controllers;
 
 import java.net.URI;
 import java.util.List;
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.caioazs.workshop.dto.UserDTO;
-import com.caioazs.workshop.models.Post;
-import com.caioazs.workshop.models.User;
-import com.caioazs.workshop.services.UserService;
+import com.caioazs.blog_api.dto.UserDTO;
+import com.caioazs.blog_api.models.Post;
+import com.caioazs.blog_api.models.User;
+import com.caioazs.blog_api.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")

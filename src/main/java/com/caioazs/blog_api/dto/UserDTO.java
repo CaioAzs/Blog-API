@@ -1,6 +1,6 @@
-package com.caioazs.workshop.dto;
+package com.caioazs.blog_api.dto;
 
-import com.caioazs.workshop.models.User;
+import com.caioazs.blog_api.models.User;
 
 public class UserDTO {
     private String id;

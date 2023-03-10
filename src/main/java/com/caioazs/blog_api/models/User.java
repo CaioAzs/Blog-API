@@ -1,4 +1,4 @@
-package com.caioazs.workshop.models;
+package com.caioazs.blog_api.models;
 
 import java.util.ArrayList;
 import java.util.List;

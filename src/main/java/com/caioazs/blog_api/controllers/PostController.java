@@ -1,4 +1,4 @@
-package com.caioazs.workshop.controllers;
+package com.caioazs.blog_api.controllers;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.caioazs.workshop.controllers.util.URL;
-import com.caioazs.workshop.models.Post;
-import com.caioazs.workshop.services.PostService;
+import com.caioazs.blog_api.controllers.util.URL;
+import com.caioazs.blog_api.models.Post;
+import com.caioazs.blog_api.services.PostService;
 
 
 

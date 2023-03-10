@@ -1,4 +1,4 @@
-package com.caioazs.workshop.services;
+package com.caioazs.blog_api.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.caioazs.workshop.exceptions.ObjectNotFoundException;
-import com.caioazs.workshop.models.Post;
-import com.caioazs.workshop.repositories.PostRepository;
+import com.caioazs.blog_api.exceptions.ObjectNotFoundException;
+import com.caioazs.blog_api.models.Post;
+import com.caioazs.blog_api.repositories.PostRepository;
 
 @Service
 public class PostService {

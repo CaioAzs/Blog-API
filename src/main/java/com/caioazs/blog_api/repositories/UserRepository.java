@@ -1,6 +1,6 @@
-package com.caioazs.workshop.repositories;
+package com.caioazs.blog_api.repositories;
 
-import com.caioazs.workshop.models.User;
+import com.caioazs.blog_api.models.User;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

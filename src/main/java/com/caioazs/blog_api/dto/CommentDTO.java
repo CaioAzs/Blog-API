@@ -1,4 +1,4 @@
-package com.caioazs.workshop.dto;
+package com.caioazs.blog_api.dto;
 
 import java.util.Date;
 

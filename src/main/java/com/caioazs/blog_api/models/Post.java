@@ -1,4 +1,4 @@
-package com.caioazs.workshop.models;
+package com.caioazs.blog_api.models;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.caioazs.workshop.dto.AuthorDTO;
-import com.caioazs.workshop.dto.CommentDTO;
+import com.caioazs.blog_api.dto.AuthorDTO;
+import com.caioazs.blog_api.dto.CommentDTO;
 
 @Document
 public class Post {
