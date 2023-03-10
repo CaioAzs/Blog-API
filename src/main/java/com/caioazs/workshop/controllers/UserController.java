@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.caioazs.workshop.dto.UserDTO;
+import com.caioazs.workshop.models.Post;
 import com.caioazs.workshop.models.User;
 import com.caioazs.workshop.services.UserService;
 
@@ -35,31 +36,37 @@ public class UserController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<UserDTO> findById(@PathVariable String id){
+    public ResponseEntity<UserDTO> findById(@PathVariable String id) {
         User user = userService.findById(id);
         return ResponseEntity.ok().body(new UserDTO(user));
     }
 
     @PostMapping
-    public ResponseEntity<Void> insert(@RequestBody UserDTO userDto){
+    public ResponseEntity<Void> insert(@RequestBody UserDTO userDto) {
         User user = userService.fromDTO(userDto);
-		user = userService.insert(user);
+        user = userService.insert(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId()).toUri();
-		return ResponseEntity.created(uri).build();
+        return ResponseEntity.created(uri).build();
     }
 
-    //Nothing will be returned on body, just the No Content status
+    // Nothing will be returned on body, just the No Content status
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> delete(@PathVariable String id){
+    public ResponseEntity<Void> delete(@PathVariable String id) {
         userService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Void> update(@PathVariable String id, @RequestBody UserDTO userDto){
+    public ResponseEntity<Void> update(@PathVariable String id, @RequestBody UserDTO userDto) {
         User user = userService.fromDTO(userDto);
         user.setId(id);
-		user = userService.update(user);
+        user = userService.update(user);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User user = userService.findById(id);
+        return ResponseEntity.ok().body(user.getPosts());
     }
 }

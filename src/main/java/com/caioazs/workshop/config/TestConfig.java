@@ -35,12 +35,17 @@ public class TestConfig implements CommandLineRunner {
         User jonas = new User(null, "jonas brothers", "jonas@gmail.com", "jonas_70correr");
         User caio = new User(null, "caio delas", "caio@gmail.com", "azscaio");
         User jorge = new User(null, "jorge", "jorge@gmail.com", "jorge_araga0");
-        
+
         userRepository.saveAll(Arrays.asList(jonas, caio, jorge));
 
         Post post1 = new Post(null, sdf.parse("21/03/2018"), "Pai ta on", "Bo jogar um lolzim", new AuthorDTO(jonas));
-        Post post2 = new Post(null, sdf.parse("23/03/2018"), "Nao acredito", "Quem foi q vazou foto do meu cheetos?????", new AuthorDTO(caio));
+        Post post2 = new Post(null, sdf.parse("23/03/2018"), "Nao acredito",
+                "Quem foi q vazou foto do meu cheetos?????", new AuthorDTO(caio));
 
         postRepository.saveAll(Arrays.asList(post1, post2));
+
+        jonas.getPosts().add(post1);
+        caio.getPosts().add(post2);
+        userRepository.saveAll(Arrays.asList(jonas, caio));
     }
 }

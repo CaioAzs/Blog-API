@@ -7,9 +7,10 @@ public class AuthorDTO {
     private String id;
     private String username;
 
-    public AuthorDTO(){}
+    public AuthorDTO() {
+    }
 
-    public AuthorDTO(User user){
+    public AuthorDTO(User user) {
         id = user.getId();
         username = user.getUsername();
     }
