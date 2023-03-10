@@ -1,5 +1,6 @@
 package com.caioazs.workshop.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,4 +19,9 @@ public class PostService {
         Optional<Post> post = postRepository.findById(id);
         return post.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
+
+    public List<Post> findByTitle(String title){
+        return postRepository.findByTitleContainingIgnoreCase(title);
+    }
+
 }
